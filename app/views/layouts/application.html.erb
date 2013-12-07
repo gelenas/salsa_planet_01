@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
+                                       "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
@@ -13,8 +15,9 @@
     <div class="container">
        <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-      <% end %>
-      <%= yield %>
+          <% end %>
+          <%= yield %> 
+      <hr> <!-- hr adds a grey line -->
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>
